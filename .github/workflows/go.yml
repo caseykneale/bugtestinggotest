@@ -5,18 +5,18 @@ on:
     branches: [ main ]
 
 jobs:
-  defaults:
-    run:
-      working-directory: ./project1
-  build:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
+    test:
+      runs-on: ubuntu-latest
+      defaults:
+        run:
+          working-directory: ./project1
+      steps:
+      - uses: actions/checkout@v2
 
-    - name: Set up Go
-      uses: actions/setup-go@v2
-      with:
-        go-version: 1.16
+      - name: Set up Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: 1.16
 
-    - name: Test
-      run: go test -v ./cmd/binary1/main_test.go
+      - name: Test
+        run: go test -v ./cmd/binary1/main_test.go
