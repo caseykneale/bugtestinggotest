@@ -9,7 +9,7 @@ jobs:
       runs-on: ubuntu-latest
       defaults:
         run:
-          working-directory: ./project1
+          working-directory: ./onesteplower/project1
       steps:
       - uses: actions/checkout@v2
 
